@@ -108,6 +108,16 @@ public class crmREST {
 	public ServizioConsulenza addServCons(ServizioConsulenza sc) {
 		return servConsService.addServizioConsulenza(sc);
 	}
+
+	@GetMapping("utenti")
+	public List<Utente> getUtente(){
+		return utenteService.getUtente();
+	}
+	
+	@PostMapping("utenti")
+	public Utente addUtente(Utente u) {
+		return utenteService.addUtente(u);
+	}
 	
 
 }
