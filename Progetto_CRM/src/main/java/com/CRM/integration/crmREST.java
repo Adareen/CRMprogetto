@@ -60,6 +60,12 @@ public class crmREST {
 	public List<Cliente> getClienti(){
 		return clienteService.getCliente();
 	}
+
+	@GetMapping("/clienti/{id}")
+	public ResponseEntity<Cliente> getCliente(@PathVariable int id) {
+	    Cliente cliente = clienteService.getCliente(id);
+	    return new ResponseEntity<>(cliente, HttpStatus.OK);
+	}
 	
 //	@PatchMapping("clienti/{id}")
 //	public ResponseEntity<Persona> patchPersona(@PathVariable double punteggioTotale, @PathVariable int id){
