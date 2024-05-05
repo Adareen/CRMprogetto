@@ -3,6 +3,7 @@ package com.CRM.entities;
 import java.time.LocalDate;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -24,21 +25,22 @@ public class Opportunita {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int IDOpportunita;
+	private int ID_Opportunita;
 	
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JoinColumn(name = "ID_Cliente")
 	private Cliente cliente;
 	
+	@Column(name="Descrizione_Opportunità")
 	private String descrizioneOpportunita;
 	private LocalDate dataInserimento;
 	private String stato;
 	
 	public int getIDOpportunita() {
-		return IDOpportunita;
+		return ID_Opportunita;
 	}
 	public void setIDOpportunita(int iDOpportunita) {
-		IDOpportunita = iDOpportunita;
+		ID_Opportunita = iDOpportunita;
 	}
 	public String getDescrizioneOpportunita() {
 		return descrizioneOpportunita;
@@ -63,7 +65,7 @@ public class Opportunita {
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 		builder.append("Opportunita [IDOpportunita=");
-		builder.append(IDOpportunita);
+		builder.append(ID_Opportunita);
 		builder.append(", cliente=");
 		builder.append(cliente);
 		builder.append(", descrizioneOpportunita=");

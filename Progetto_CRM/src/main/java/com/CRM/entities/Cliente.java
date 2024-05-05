@@ -24,23 +24,23 @@ public class Cliente {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int IDCliente;
+	private int ID_Cliente;
 	
 	private String nomeAzienda, referenteAziendale, categoriaMerceologica, tipologiaCliente;
 	
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	@JoinColumn(name = "ID_Utente")
-	private Utente utenteAssociato;
+	@JoinColumn(name = "Utente_Associato")
+	private Utente utenteAssociato; // utente associato per cliente, prende l'id
 	
 	@OneToMany(mappedBy = "cliente")
 	private Set<ClienteTag> clienteTags;
 
 	public int getIDCliente() {
-		return IDCliente;
+		return ID_Cliente;
 	}
 
 	public void setIDCliente(int iDCliente) {
-		IDCliente = iDCliente;
+		ID_Cliente = iDCliente;
 	}
 
 	public String getNomeAzienda() {
@@ -79,7 +79,7 @@ public class Cliente {
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 		builder.append("Cliente [IDCliente=");
-		builder.append(IDCliente);
+		builder.append(ID_Cliente);
 		builder.append(", nomeAzienda=");
 		builder.append(nomeAzienda);
 		builder.append(", referenteAziendale=");

@@ -24,7 +24,7 @@ public class Appuntamento {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int IDAppuntamento;
+	private int ID_Appuntamento;
 	
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JoinColumn(name = "ID_Cliente")
@@ -34,15 +34,15 @@ public class Appuntamento {
 	private String descrizione;
 	
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	@JoinColumn(name = "ID_Utente")
+	@JoinColumn(name = "Utente_Associato")
 	private Utente utenteAssociato;
 
 	public int getIDAppuntamento() {
-		return IDAppuntamento;
+		return ID_Appuntamento;
 	}
 
 	public void setIDAppuntamento(int iDAppuntamento) {
-		IDAppuntamento = iDAppuntamento;
+		ID_Appuntamento = iDAppuntamento;
 	}
 
 	public LocalDate getDataAppuntamento() {
@@ -65,7 +65,7 @@ public class Appuntamento {
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 		builder.append("Appuntamento [IDAppuntamento=");
-		builder.append(IDAppuntamento);
+		builder.append(ID_Appuntamento);
 		builder.append(", cliente=");
 		builder.append(cliente);
 		builder.append(", dataAppuntamento=");

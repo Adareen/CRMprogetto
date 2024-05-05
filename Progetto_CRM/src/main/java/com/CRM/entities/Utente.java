@@ -19,16 +19,16 @@ public class Utente {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int IDUtente;
+	private int ID_utente;
 	
 	private String nomeUtente, ruolo, email, password;
 	private LocalDate dataRegistrazione;
 	
 	public int getIDUtente() {
-		return IDUtente;
+		return ID_utente;
 	}
 	public void setIDUtente(int iDUtente) {
-		IDUtente = iDUtente;
+		ID_utente = iDUtente;
 	}
 	public String getNomeUtente() {
 		return nomeUtente;
@@ -65,7 +65,7 @@ public class Utente {
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 		builder.append("Utente [IDUtente=");
-		builder.append(IDUtente);
+		builder.append(ID_utente);
 		builder.append(", nomeUtente=");
 		builder.append(nomeUtente);
 		builder.append(", ruolo=");

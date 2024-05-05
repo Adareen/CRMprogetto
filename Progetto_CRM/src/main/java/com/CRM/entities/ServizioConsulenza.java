@@ -17,16 +17,16 @@ public class ServizioConsulenza {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int IDServizio;
+	private int ID_Servizio;
 	
 	private String nomeServizio, descrizione;
 	private double prezzo;
 	
 	public int getIDServizio() {
-		return IDServizio;
+		return ID_Servizio;
 	}
 	public void setIDServizio(int iDServizio) {
-		IDServizio = iDServizio;
+		ID_Servizio = iDServizio;
 	}
 	public String getNomeServizio() {
 		return nomeServizio;
@@ -51,7 +51,7 @@ public class ServizioConsulenza {
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 		builder.append("ServizioConsulenza [IDServizio=");
-		builder.append(IDServizio);
+		builder.append(ID_Servizio);
 		builder.append(", nomeServizio=");
 		builder.append(nomeServizio);
 		builder.append(", descrizione=");

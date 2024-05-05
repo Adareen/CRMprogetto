@@ -26,11 +26,23 @@ public class ServiceImpl implements AppuntamentoService, ClienteService, NotaCli
 	
 	@Autowired
 	AppuntamentoDAO appuntamentoDao;
+	
+	@Autowired
 	ClienteDAO clienteDao;
+	
+	@Autowired
 	NotaClienteDAO notaClienteDao;
+	
+	@Autowired
 	OpportunitaDAO opportunitaDao;
+	
+	@Autowired
 	ServizioConsulenzaDAO servConsDao;
+	
+	@Autowired
 	TagClienteDAO tagClienteDao;
+	
+	@Autowired
 	UtenteDAO utenteDao;
 
 	@Override
@@ -50,15 +62,13 @@ public class ServiceImpl implements AppuntamentoService, ClienteService, NotaCli
 
 	@Override
 	public void delUtente(Utente u) {
-		// TODO Auto-generated method stub
-
+		utenteDao.delete(u);
 	}
 
-	@Override
-	public Utente getUtente(Utente u) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+//	@Override
+//	public Utente getUtente(Utente u) {
+//		
+//	}
 
 	@Override
 	public List<TagCliente> getTagCliente() {
@@ -72,14 +82,12 @@ public class ServiceImpl implements AppuntamentoService, ClienteService, NotaCli
 
 	@Override
 	public TagCliente updateTagCliente(TagCliente tc) {
-		// TODO Auto-generated method stub
 		return tagClienteDao.save(tc);
 	}
 
 	@Override
 	public void delTagCliente(TagCliente tc) {
-		// TODO Auto-generated method stub
-
+		tagClienteDao.delete(tc);
 	}
 
 	@Override
@@ -99,7 +107,7 @@ public class ServiceImpl implements AppuntamentoService, ClienteService, NotaCli
 
 	@Override
 	public void delServizioConsulenza(ServizioConsulenza ps) {
-		// TODO Auto-generated method stub
+		servConsDao.delete(ps);
 
 	}
 
@@ -120,7 +128,7 @@ public class ServiceImpl implements AppuntamentoService, ClienteService, NotaCli
 
 	@Override
 	public void delOpportunita(Opportunita o) {
-		// TODO Auto-generated method stub
+		opportunitaDao.delete(o);
 
 	}
 
@@ -141,8 +149,7 @@ public class ServiceImpl implements AppuntamentoService, ClienteService, NotaCli
 
 	@Override
 	public void delNotaCliente(NotaCliente nc) {
-		// TODO Auto-generated method stub
-
+		notaClienteDao.delete(nc);
 	}
 
 	@Override
@@ -162,14 +169,12 @@ public class ServiceImpl implements AppuntamentoService, ClienteService, NotaCli
 
 	@Override
 	public void delCliente(Cliente c) {
-		// TODO Auto-generated method stub
-
+		clienteDao.delete(c);
 	}
 
 	@Override
-	public Cliente getCliente(Cliente c) {
-		// TODO Auto-generated method stub
-		return null;
+	public Cliente getCliente(int id) {
+		return clienteDao.findById(id).get();
 	}
 
 	@Override
@@ -189,8 +194,7 @@ public class ServiceImpl implements AppuntamentoService, ClienteService, NotaCli
 
 	@Override
 	public void delAppuntamento(Appuntamento p) {
-		// TODO Auto-generated method stub
-
+		appuntamentoDao.delete(p);
 	}
 
 }

@@ -13,6 +13,6 @@ public interface UtenteService {
 	Utente addUtente(Utente u);
 	Utente updateUtente(Utente u);
 	void delUtente(Utente u);
-	Utente getUtente(Utente u);
+//	Utente getUtente(Utente u);
 
 }

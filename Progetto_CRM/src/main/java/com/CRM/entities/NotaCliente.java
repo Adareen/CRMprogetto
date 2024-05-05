@@ -24,7 +24,7 @@ public class NotaCliente {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int IDNota;
+	private int ID_Nota;
 	
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JoinColumn(name="ID_Cliente")
@@ -34,15 +34,15 @@ public class NotaCliente {
 	private LocalDate dataRegistrazione;
 	
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	@JoinColumn(name="ID_Utente")
+	@JoinColumn(name="Utente_Registrante")
 	private Utente utenteRegistrante;
 
 	public int getIDNota() {
-		return IDNota;
+		return ID_Nota;
 	}
 
 	public void setIDNota(int iDNota) {
-		IDNota = iDNota;
+		ID_Nota = iDNota;
 	}
 
 	public String getTestoNota() {
@@ -65,7 +65,7 @@ public class NotaCliente {
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 		builder.append("NotaCliente [IDNota=");
-		builder.append(IDNota);
+		builder.append(ID_Nota);
 		builder.append(", IDCliente=");
 		builder.append(cliente);
 		builder.append(", testoNota=");

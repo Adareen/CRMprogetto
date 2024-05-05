@@ -19,7 +19,7 @@ public class ClienteTag {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int IDClienteTag;
+	private int ID_ClienteTag;
 	
 	@ManyToOne
 	@JoinColumn(name = "ID_Cliente")

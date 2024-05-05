@@ -13,6 +13,6 @@ public interface ClienteService {
 	Cliente addCliente(Cliente c);
 	Cliente updateCliente(Cliente c);
 	void delCliente(Cliente c);
-	Cliente getCliente(Cliente c);
+	Cliente getCliente(int id);
 
 }

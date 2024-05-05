@@ -20,7 +20,7 @@ public class TagCliente {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int IDTag;
+	private int ID_Tag;
 	
 	private String nomeTag;
 	
@@ -28,11 +28,11 @@ public class TagCliente {
 	private Set<ClienteTag> clienteTags;
 
 	public int getIDTag() {
-		return IDTag;
+		return ID_Tag;
 	}
 
 	public void setIDTag(int iDTag) {
-		IDTag = iDTag;
+		ID_Tag = iDTag;
 	}
 
 	public String getNomeTag() {
@@ -47,7 +47,7 @@ public class TagCliente {
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 		builder.append("TagCliente [IDTag=");
-		builder.append(IDTag);
+		builder.append(ID_Tag);
 		builder.append(", nomeTag=");
 		builder.append(nomeTag);
 		builder.append("]");
