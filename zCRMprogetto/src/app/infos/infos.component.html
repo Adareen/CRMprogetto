@@ -1,7 +1,59 @@
-<ul class="list-group col" style="width: fit-content;">
-    <li class="list-group-item">info - info2</li>
-    <li class="list-group-item">info - info2</li>
-    <li class="list-group-item">info - info2</li>
-    <li class="list-group-item">info - info2</li>
-    <li class="list-group-item">info - info2</li>
-  </ul>
+<div class="row mt-3">
+  <div class="col-6">
+    <h3>Elenco Clienti</h3>
+    <ul class="list-group col my-4">
+      <li class="list-group-item" *ngFor="let cliente of listaClienti">{{cliente.nomeAzienda}}</li>
+    </ul>
+  </div>
+  <div class="col-6">
+    <h3>Agenda Appuntamenti</h3>
+    <ul class="list-group col my-4">
+      <li class="list-group-item" *ngFor="let appuntamento of listaAppuntamenti">{{appuntamento.dataAppuntamento}}
+        {{appuntamento.descrizione}}</li>
+    </ul>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col-6">
+      <h3 class="mb-4">Aggiungi nuovo cliente</h3>
+      <div>
+
+        <label for="" class="form-label">Nome Azienda</label>
+        <input type="text" class="form-control border border-dark border-2 mb-3" name="" id="" aria-describedby="helpId"
+          placeholder="" />
+
+        <label for="" class="form-label">Referente aziendale</label>
+        <input type="text" class="form-control border border-dark border-2 mb-3" name="" id="" aria-describedby="helpId"
+          placeholder="" />
+
+        <label for="" class="form-label">Categoria merceologica</label>
+        <input type="text" class="form-control border border-dark border-2 mb-3" name="" id="" aria-describedby="helpId"
+          placeholder="" />
+
+        <label for="" class="form-label">Tipologia cliente</label>
+        <input type="text" class="form-control border border-dark border-2 mb-3" name="" id="" aria-describedby="helpId"
+          placeholder="" />
+
+        <button class="btn btn-warning mt-3">Aggiungi cliente</button>
+
+      </div>
+    </div>
+    <div class="col-6">
+      <h3 class="mb-4">Aggiungi appuntamento</h3>
+
+      <label for="" class="form-label">Data appuntamento</label>
+      <input type="date" class="form-control border border-dark border-2 mb-3" name="" id="" aria-describedby="helpId"
+        placeholder="" />
+
+      <label for="" class="form-label">Descrizione</label>
+      <input type="text" class="form-control border border-dark border-2 mb-3" name="" id="" aria-describedby="helpId"
+        placeholder="" />
+
+      <button class="btn btn-primary mt-3">Aggiungi appuntamento</button>
+    </div>
+  </div>
+
+</div>
+
+<!-- private dataAppuntamento: string,
+private descrizione: string, -->

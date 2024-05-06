@@ -9,7 +9,7 @@
     body {
       display: flex;
       flex-direction: row;
-      height: 100vh;
+      /* height: 100vh; */
       margin: 0;
       padding: 0;
     }
@@ -24,13 +24,19 @@
 
 
       width: 20%;
-      min-height: 100vh;
+      /* min-height: 90vh; */
       /* Assicura che l'aside occupi almeno l'altezza dello schermo */
-      background-color: #f0f0f0;
+      /* background-color: #0f541f; */
       padding: 20px;
       box-sizing: border-box;
       transition: width 0.5s ease;
 
+
+
+    }
+
+    .bg-aside {
+      background-image: linear-gradient(90deg, #34813678, #fff);
     }
 
     ul {
@@ -53,14 +59,14 @@
     }
 
     ul li a:hover {
-      color: #007bff;
+      color: #fff;
     }
   </style>
 </head>
 
 <body>
   <div style="display: flex;">
-    <aside>
+    <aside class="bg-success text-white fs-4 border-4 border-end border-dark shadow-lg">
       <h2>Dashboard <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
           class="bi bi-speedometer2" viewBox="0 0 16 16">
           <path
@@ -87,12 +93,11 @@
             </svg></a></li>
       </ul>
     </aside>
-    <div class="container">
+    <div class="container ms-3">
       <div class="content">
         <h1>Dashboard</h1>
 
-
-
+        <h3>Hello, Utente/Admin</h3>
 
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem cupiditate ipsa tenetur, ipsam quia nam
           aspernatur distinctio sapiente, quod quas id. Iure odio labore praesentium quisquam sint fugiat quam vel!
@@ -102,9 +107,6 @@
           Nesciunt nam natus, recusandae, vel quibusdam placeat, exercitationem atque ea maiores voluptatem ut! Nobis
           quam excepturi enim. Est nesciunt perspiciatis, accusamus excepturi velit dignissimos in, provident minima
           labore sit tenetur?</p>
-
-
-
       </div>
 
       <div class="row">
@@ -142,7 +144,17 @@
       </div> -->
 
     </div>
+
   </div>
+  <aside class="bg-aside border-start border-1 border-dark">
+    <h1>Lista Opportunità</h1>
+    <ul class="list-group col my-4">
+      <li class="list-group-item px-2" *ngFor="let opportunita of listaOpportunita">
+        {{opportunita.descrizioneOpportunita}}
+      </li>
+    </ul>
+
+  </aside>
 </body>
 
 </html>
