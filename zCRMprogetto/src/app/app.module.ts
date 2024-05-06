@@ -16,7 +16,7 @@ import { FormsModule } from "@angular/forms";
     NavbarComponent,
     HomeComponent,
     DashboardComponent,
-    InfosComponent
+    InfosComponent,
     HomeComponent,
     DashboardComponent,
   ],
