@@ -9,8 +9,7 @@
     <label for="" class="form-label mt-5">Password</label>
     <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="Inserisci la password"
       style="width: 300px;" [(ngModel)]="password" />
-    <button [routerLink]="['/dashboard']" class="btn btn-primary fs-5 mt-4" (click)="login()">Logga</button>
+    <button [routerLink]="['/dashboard']" class="btn btn-primary fs-5 mt-4" (click)="checkUser()">Logga</button>
   </div>
 
 </div>
-<router-outlet></router-outlet>

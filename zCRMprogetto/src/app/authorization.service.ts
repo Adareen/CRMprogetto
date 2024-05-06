@@ -17,20 +17,12 @@ export class AuthorizationService {
     this.http.get<Utente[]>(this.urlUtenti).subscribe((utenti) => {
       this.listaUtenti = utenti;
     });
-    
   }
 
-  checkUser(nomeUser?: string, passUser?: string) {
-    if (
-      this.listaUtenti.length > 0 &&
-      this.listaUtenti[0].nomeUtente == nomeUser &&
-      this.listaUtenti[0].password == passUser &&
-      nomeUser != "" &&
-      passUser != ""
-    ) {
-      return true;
-    } else {
-      return false;
-    }
+  authorizedService: boolean;
+
+  checkUserGuard(authorized: boolean) {
+    this.authorizedService = authorized;
+    return this.authorizedService;
   }
 }

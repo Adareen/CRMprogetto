@@ -1,7 +1,6 @@
 import { CanActivateFn, Router } from "@angular/router";
 import { AuthorizationService } from "./authorization.service";
 import { inject } from "@angular/core";
-import { HomeComponent } from "./home/home.component";
 
 export const authGuardGuard: CanActivateFn = (route, state) => {
   console.log("Chiamando guardia");
@@ -9,11 +8,11 @@ export const authGuardGuard: CanActivateFn = (route, state) => {
   const authService = inject(AuthorizationService);
   const router = inject(Router);
 
-  const home = inject(HomeComponent);
-
-  if (home.login()) {
+  if (authService.authorizedService) {
+    console.log("Autorizzato");
     return true;
   } else {
     console.log("No autorizzato");
+    return false;
   }
 };

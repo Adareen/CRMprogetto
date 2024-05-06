@@ -17,27 +17,36 @@ export class HomeComponent implements OnInit {
   listaUtenti: Utente[];
 
   nomeUtente: string;
-  // ruolo: string;
-  // email: string;
   password: string;
-  // dataRegistrazione: string;
-  // idutente: number;
 
-  login() {
-    // this.listaUtenti = this.authServ.listaUtenti;
-    // console.log(this.listaUtenti[0]);
-    // if (this.authServ.checkUser(this.nomeUtente, this.password) == true) {
-    //   console.log("utente giusto");
-    // }
-    console.log(this.listaUtenti);
-    return true;
-  }
+  // login() {
+  //   console.log(this.listaUtenti);
+  //   return true;
+  // }
   urlUtenti: string = "http://localhost:9029/api/utenti";
 
   ngOnInit(): void {
     this.http.get<Utente[]>(this.urlUtenti).subscribe((utenti) => {
       this.listaUtenti = utenti;
     });
-    console.log(this.listaUtenti);
+  }
+
+  authorized: boolean;
+
+  checkUser() {
+    this.listaUtenti.forEach((utente) => {
+      if (
+        this.listaUtenti.length > 0 &&
+        utente.nomeUtente == this.nomeUtente &&
+        utente.password == this.password &&
+        this.nomeUtente != "" &&
+        this.password != ""
+      ) {
+        this.authorized = true;
+      } else {
+        this.authorized = false;
+      }
+      this.authServ.checkUserGuard(this.authorized);
+    });
   }
 }
