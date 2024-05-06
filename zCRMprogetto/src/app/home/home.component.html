@@ -1,0 +1,16 @@
+<div class="container">
+  <h1 class="my-5">Login
+  </h1>
+
+  <div class="mb-3">
+    <label for="" class="form-label">User</label>
+    <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="Inserisci username"
+      style="width: 300px;" [(ngModel)]="nomeUtente" />
+    <label for="" class="form-label mt-5">Password</label>
+    <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="Inserisci la password"
+      style="width: 300px;" [(ngModel)]="password" />
+    <button [routerLink]="['/dashboard']" class="btn btn-primary fs-5 mt-4" (click)="login()">Logga</button>
+  </div>
+
+</div>
+<router-outlet></router-outlet>
